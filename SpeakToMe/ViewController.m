@@ -14,7 +14,7 @@
 
 @interface ViewController () <AVSpeechSynthesizerDelegate>
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *rateSegmentedControl;
+@property (weak, nonatomic) IBOutlet UISlider *rateSlider;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIButton *speakBtn;
 
@@ -32,13 +32,11 @@
 {
     [super viewDidLoad];
     
-    self.rateSegmentedControl.selectedSegmentIndex = 1;
-    
-    self.textView.layer.borderColor = self.rateSegmentedControl.tintColor.CGColor;
+    self.textView.layer.borderColor = self.speakBtn.tintColor.CGColor;
     self.textView.layer.borderWidth = 1;
     self.textView.layer.cornerRadius = 4;
     
-    self.speakBtn.layer.borderColor = self.rateSegmentedControl.tintColor.CGColor;
+    self.speakBtn.layer.borderColor = self.speakBtn.tintColor.CGColor;
     self.speakBtn.layer.borderWidth = 1;
     self.speakBtn.layer.cornerRadius = 4;
 
@@ -86,17 +84,7 @@
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:self.utteranceString];
     
     utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"he-IL"];
-    
-    switch (self.rateSegmentedControl.selectedSegmentIndex)
-    {
-        case 0:
-            utterance.rate = AVSpeechUtteranceMinimumSpeechRate;
-            break;
-        default:
-            utterance.rate = AVSpeechUtteranceDefaultSpeechRate;
-            break;
-    }
-
+    utterance.rate = self.rateSlider.value;
     utterance.preUtteranceDelay = 0.2f;
     utterance.postUtteranceDelay = 0.2f;
     
