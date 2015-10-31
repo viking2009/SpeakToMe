@@ -18,19 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.1" minValue="0.0" maxValue="0.2" translatesAutoresizingMaskIntoConstraints="NO" id="UXR-KB-aML">
-                                <rect key="frame" x="148" y="19" width="304" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.0" maxValue="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="UXR-KB-aML">
+                                <rect key="frame" x="148" y="25" width="304" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="GTL-6Q-UV0"/>
                                 </constraints>
                             </slider>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="אני מצטער, התגובות שלי הן מוגבלות. אתה חייב לשאול את השאלות הנכונות" translatesAutoresizingMaskIntoConstraints="NO" id="cWM-h5-b8H">
-                                <rect key="frame" x="20" y="58" width="560" height="234"/>
+                                <rect key="frame" x="20" y="60" width="560" height="232"/>
                                 <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPu-vR-gb8" userLabel="Speak Btn">
-                                <rect key="frame" x="245" y="302" width="110" height="38"/>
+                                <rect key="frame" x="245" y="297" width="110" height="38"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Speak to me!"/>
                                 <connections>
@@ -40,21 +40,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cWM-h5-b8H" secondAttribute="bottom" constant="300" id="EHX-CD-Ig1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cWM-h5-b8H" secondAttribute="trailing" id="agh-u2-zs2"/>
-                            <constraint firstItem="cWM-h5-b8H" firstAttribute="top" secondItem="UXR-KB-aML" secondAttribute="bottom" constant="9" id="bdp-PY-efP"/>
-                            <constraint firstItem="UXR-KB-aML" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-1" id="cJV-FT-Ym4"/>
-                            <constraint firstItem="FPu-vR-gb8" firstAttribute="top" secondItem="cWM-h5-b8H" secondAttribute="bottom" constant="10" id="f3S-mV-8fW"/>
+                            <constraint firstItem="cWM-h5-b8H" firstAttribute="top" secondItem="UXR-KB-aML" secondAttribute="bottom" constant="5" id="bdp-PY-efP"/>
+                            <constraint firstItem="UXR-KB-aML" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="cJV-FT-Ym4"/>
+                            <constraint firstItem="FPu-vR-gb8" firstAttribute="top" secondItem="cWM-h5-b8H" secondAttribute="bottom" constant="5" id="f3S-mV-8fW"/>
                             <constraint firstItem="FPu-vR-gb8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lHC-Pe-8bH"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FPu-vR-gb8" secondAttribute="bottom" constant="260" id="oBm-Q8-os3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FPu-vR-gb8" secondAttribute="bottom" constant="265" id="oBm-Q8-os3"/>
                             <constraint firstItem="cWM-h5-b8H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="omj-n6-k77"/>
                             <constraint firstItem="UXR-KB-aML" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vhD-c0-kg5"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="EHX-CD-Ig1"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="rateSlider" destination="UXR-KB-aML" id="k4d-eX-6Rr"/>
